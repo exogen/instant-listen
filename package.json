@@ -1,0 +1,22 @@
+{
+  "name": "instant-listen",
+  "author": "Brian Beck <exogen@gmail.com>",
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "demo": "node demo/server.js",
+    "test": "jest --coverage",
+    "test:only": "jest"
+  },
+  "devDependencies": {
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
