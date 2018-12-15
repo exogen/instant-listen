@@ -27,18 +27,18 @@ module.exports = function instantListen(createHandler) {
 
   function handler(req, res, next) {
     if (readyHandler) {
-      // If `appHandler` has already been set, skip waiting on the promise
-      // (which even if resolved, will be async) and call the handler right
-      // away.
+      // If `readyHandler` has already been set, skip waiting on the promise
+      // (which even if already resolved, would be async) and call the handler
+      // right away.
       readyHandler(req, res, next);
     } else {
       ready
-        // When the `ready` promise is resolved, `appHandler` is guaranteed
-        // to be set.
+        // When the `ready` promise is resolved, `readyHandler` is guaranteed to
+        // be set.
         .then(() => {
           readyHandler(req, res, next);
         })
-        // If there was a problem with either `ready` or `appHandler`, it
+        // If there was a problem with either `ready` or `readyHandler`, it
         // happened asynchronously and the server needs to know about the
         // error, so pass it along to `next`.
         .catch(next);
