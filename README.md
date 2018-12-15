@@ -54,7 +54,6 @@ server.listen(3000, err => {
   if (err) {
     throw err;
   }
-  // Tell `instant-listen` that we're ready to bootstrap!
   handler.init();
   console.log(`> Ready on http://localhost:3000`);
 });
@@ -84,8 +83,8 @@ it is ready to use your real handler. The handler function has two extra
 properties:
 
 - `init`: A function to call when you’re ready for your handler creation
-  function to be called. In order to guarantee the server starts listening as
-  soon as possible, it’s best to do this after the server is already listening
-  (like in the `listen()` callback).
+  function to begin. In order to guarantee the server starts listening as soon
+  as possible, it’s best to do this after the server is already listening (like
+  in the `listen()` callback).
 - `ready`: A Promise that will resolve when the handler has been created and is
   ready to respond to requests.
