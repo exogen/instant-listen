@@ -88,4 +88,5 @@ properties:
   as possible, it’s best to do this after the server is already listening (like
   in the `listen()` callback).
 - `ready`: A Promise that will resolve when the handler has been created and is
-  ready to respond to requests.
+  ready to respond to requests. You probably don’t need to use this, unless you
+  want to `catch` errors that occur during initialization.
