@@ -16,7 +16,7 @@ startup time. The initial app creation:
 
 ```js
 // This is a really slow synchronous/blocking call! 
-const app = next({ dev });
+const app = next(/* ... */);
 ```
 
 And the preparation, which performs a webpack build:
