@@ -15,14 +15,14 @@ has a rather slow bootstrapping phase. There are two slow parts to Next.js’
 startup time. The initial app creation:
 
 ```js
-// This is really slow!
+// This is a really slow synchronous/blocking call! 
 const app = next({ dev });
 ```
 
 And the preparation, which performs a webpack build:
 
 ```js
-// This is even slower!
+// This is an even slower asynchronous call!
 app.prepare().then(/* ... */);
 ```
 
@@ -64,7 +64,8 @@ server.listen(3000, err => {
 ```js
 // CommonJS
 const instantListen = require("instant-listen");
-// Modules
+
+// ES2015
 import instantListen from "instant-listen";
 ```
 
